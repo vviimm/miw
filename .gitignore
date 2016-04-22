@@ -1,0 +1,24 @@
+.DS_Store
+.bundle
+log/*.log
+log/*.pid
+tmp/**/*
+vendor/bundle
+config/database.yml
+rspec.watchr
+public/uploads/*
+.pgpass
+certs/*
+.env
+
+*.swp
+*.swo
+
+# Ignore all logfiles and tempfiles.
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+
+# Ignore Byebug command history file.
+.byebug_history
