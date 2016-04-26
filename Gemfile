@@ -13,6 +13,7 @@ gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
+gem 'frontend-generators'
 
 gem 'devise', github: 'plataformatec/devise', branch: 'master'
 
