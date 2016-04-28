@@ -1,5 +1,5 @@
 class CleanBlogsController < ApplicationController
-	layout "clean_blog"
+  layout "clean_blog"
 
 	def index
 	end
