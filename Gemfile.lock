@@ -64,18 +64,20 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (7.0.0)
-    autoprefixer-rails (6.3.6)
-      execjs
     bcrypt (3.1.11)
-    bootstrap-sass (3.3.6)
-      autoprefixer-rails (>= 5.2.1)
-      sass (>= 3.3.4)
     builder (3.2.2)
     carrierwave (0.11.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
       json (>= 1.7)
       mime-types (>= 1.16)
+    ckeditor (4.1.6)
+      cocaine
+      orm_adapter (~> 0.5.0)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.8)
+      climate_control (>= 0.0.3, < 1.0)
     coderay (1.1.1)
     coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
@@ -221,6 +223,8 @@ GEM
     fog-xml (0.1.2)
       fog-core
       nokogiri (~> 1.5, >= 1.5.11)
+    font-awesome-rails (4.6.1.0)
+      railties (>= 3.2, < 5.1)
     font-awesome-sass (4.5.0)
       sass (>= 3.2)
     formatador (0.2.5)
@@ -349,13 +353,14 @@ PLATFORMS
 DEPENDENCIES
   active_model_serializers
   activemodel-serializers-xml!
-  bootstrap-sass
   carrierwave
+  ckeditor
   coffee-rails
   devise!
   dotenv-rails
   fog
   fog-aws
+  font-awesome-rails
   font-awesome-sass
   frontend-generators
   jbuilder

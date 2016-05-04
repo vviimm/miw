@@ -1,1 +1,28 @@
-<h1>Hello my friend</h1>
+<%= render 'cezar/shared/header' %>
+
+<div class="page-content">
+  <div class="row">
+    <div class="col-md-2">
+      <%= render 'cezar/shared/sidebar' %>
+    </div>
+
+    <div class="col-md-10">
+      <div class="row">
+        <div class="col-md-12">
+          <div id="js-content" class="fade"></div>
+          <%= render 'cezar/shared/content' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="loader" style="display:none;"></div>
+
+<%= render 'cezar/shared/footer' %>
+
+<script type="text/javascript">
+  $(function() {
+    Spinner.init();
+  });
+</script>

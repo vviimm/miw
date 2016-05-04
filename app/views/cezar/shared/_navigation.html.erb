@@ -1,0 +1,19 @@
+<div class="navbar navbar-inverse" role="banner">
+  <nav class="collapse navbar-collapse bs-navbar-collapse in navbar-right" role="navigation">
+    <ul class="nav navbar-nav">
+
+      <li>
+        <%= link_to " Создать", new_cezar_article_path, id: "spinner", class: "glyphicon glyphicon-pencil", remote: true %>
+      </li>
+
+      <li>
+        <%= link_to ' Настройки', cezar_settings_path, class: "glyphicon glyphicon-cog" %>
+      </li>
+
+      <li>
+        <%= link_to ' Выйти', destroy_cezar_session_path, class: "glyphicon glyphicon-off", method: :delete %>
+      </li>
+
+    </ul>
+  </nav>
+</div>

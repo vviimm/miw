@@ -11,7 +11,7 @@ gem 'uglifier'
 gem 'coffee-rails'
 gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
-gem 'bootstrap-sass'
+gem "font-awesome-rails"
 gem 'font-awesome-sass'
 gem 'frontend-generators'
 
@@ -27,7 +27,8 @@ gem 'carrierwave'
 gem 'fog'
 gem 'fog-aws'
 gem 'mini_magick'
-gem "jquery-fileupload-rails"
+gem 'jquery-fileupload-rails'
+gem 'ckeditor'
 
 # Localization
 gem 'russian'

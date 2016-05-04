@@ -1,0 +1,7 @@
+<% if @article.changed? %>
+  $('#js-field-arrors').append("<%=j render('cezar/shared/errors', article: @article) %>");
+  $('#js-errors').css("color", "red");
+<% else %>
+  $('#js-content').removeClass('in').empty();
+  $('#<%= dom_id(@article) %>').replaceWith("<%=j render('cezar/shared/article', article: @article) %>");
+<% end %>

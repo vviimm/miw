@@ -1,0 +1,18 @@
+<div id="<%= dom_id(article) %>">
+  <div id="css-header-content" class="content-box-header panel-heading">
+    <div class="panel-title "><%= article.title.html_safe %></div>
+
+    <div class="panel-options">
+
+      <%= link_to edit_cezar_article_path(article), id: "spinner", remote: true do %>
+        <i class="glyphicon glyphicon-edit"></i><% end %>
+
+      <%= link_to cezar_article_path(article), id: "spinner", method: :delete, remote: true do %>
+        <i class="glyphicon glyphicon-remove"></i><% end %>
+    </div>
+  </div>
+  <div class="content-box-large box-with-header">
+    <%= article.body.html_safe %>
+    <div style='clear: both'></div>
+  </div>
+</div>

@@ -1,0 +1,6 @@
+<% if @article.new_record? %>
+  $('#js-field-arrors').append("<%=j render('cezar/shared/errors', article: @article) %>");
+  $('#js-errors').css("color", "red");
+<% else %>
+  $('#js-content').removeClass('in').empty().after("<%=j render('cezar/shared/article', article: @article) %><hr />");
+<% end %>

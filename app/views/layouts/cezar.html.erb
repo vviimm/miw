@@ -8,16 +8,11 @@
     <%= stylesheet_link_tag    'cezar', media: 'all' %>
     <%= javascript_include_tag 'cezar' %>
     <%= csrf_meta_tags %>
-    <%= render 'layouts/shim' %>
+    <%= render 'shared/shim' %>
   </head>
   <body>
 
-    <%= render 'cezar/navigation' %>
-    <%= render 'layouts/flash_messages' %>
-
-    <div class="container">
-      <%= yield %>
-    </div>
+    <%= yield %>
 
   </body>
 </html>

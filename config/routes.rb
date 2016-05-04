@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
 
+  mount Ckeditor::Engine => '/ckeditor'
+
   devise_for :cezars
 
   namespace :cezar do
 
     resources :dashboard, only: [:index]
+    resources :articles
+    resources :settings,  only: [:index]
 
     get '/', to: 'dashboard#index'
   end
