@@ -1,11 +1,17 @@
 module CleanBlogsHelper
-  # Returns the full title on a per-page basis.
+
   def full_title(page_title = '')
-      base_title = "Clean Blog"
-      if page_title.empty?
-          base_title
-      else
-          "#{base_title} - #{page_title}"
-      end
+
+    if cezar_signed_in?
+      base_title = "MIW_control"
+    else
+      base_title = "MIW"
+    end
+
+    if page_title.empty?
+      base_title
+    else
+      "#{base_title} - #{page_title}"
+    end
   end
 end

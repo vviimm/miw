@@ -1,0 +1,21 @@
+<% provide(:title, @page.name) %>
+
+<div id="page_content" class="mercury-region" data-type="editable">
+  <% if @page.name == "home" %>
+
+    <% @articles.each do |article| %>
+      <div class="post-preview">
+        <%= link_to article_path(article) do %>
+          <h2 class="post-title">
+            <%= article.title %>
+          </h2>
+          <h3 class="post-subtitle">
+            <%= article.theme %>
+          </h3>
+        <% end %>
+        <p class="post-meta">Дата обновления <%= article.updated_at.to_formatted_s(:long) %></p>
+      </div>
+      <hr>
+    <% end %>
+  <% end %>
+</div>

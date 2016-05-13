@@ -1,6 +1,6 @@
 <div id="<%= dom_id(article) %>">
   <div id="css-header-content" class="content-box-header panel-heading">
-    <div class="panel-title "><%= article.title.html_safe %></div>
+    <div class="panel-title ">MIW</div>
 
     <div class="panel-options">
 
@@ -11,7 +11,10 @@
         <i class="glyphicon glyphicon-remove"></i><% end %>
     </div>
   </div>
+
   <div class="content-box-large box-with-header">
+    <h1><%= article.title.html_safe %></h1>
+    <blockquote><%= article.theme %></blockquote>
     <%= article.body.html_safe %>
     <div style='clear: both'></div>
   </div>

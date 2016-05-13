@@ -3,7 +3,7 @@ class Cezar::ArticlesController < Cezar::BaseController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   def index
-    @articles = Article.order("created_at DESC")
+    @articles = Article.order("updated_at DESC")
   end
 
   def show
@@ -36,6 +36,6 @@ private
   end
 
   def article_params
-    params.require(:article).permit(:title, :body)
+    params.require(:article).permit(:title, :theme, :image, :body)
   end
 end

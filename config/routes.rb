@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  mount Mercury::Engine => '/'
   mount Ckeditor::Engine => '/ckeditor'
 
   devise_for :cezars
@@ -8,14 +9,14 @@ Rails.application.routes.draw do
 
     resources :dashboard, only: [:index]
     resources :articles
-    resources :settings,  only: [:index]
+    resources :settings_pages, only: [:edit, :update]
 
     get '/', to: 'dashboard#index'
   end
 
-  root 'clean_blogs#index'
-  get  'about',   to: 'clean_blogs#about'
-  get  'post',    to: 'clean_blogs#post'
-  get  'contact', to: 'clean_blogs#contact'
+  resources :pages, only: [:show, :update]
 
+  resources :articles, only: [:show]
+
+  root 'pages#show', id: '1'
 end

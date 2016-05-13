@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.2.4'
 
-gem 'rails', '5.0.0.beta3'
+gem 'rails', '5.0.0.rc1'
 gem 'pg'
 
 # Assets
@@ -24,11 +24,13 @@ gem 'active_model_serializers'
 
 # File Uploads
 gem 'carrierwave'
+gem 'remotipart', github: 'mshibuya/remotipart', ref: '3a6acb3'
 gem 'fog'
 gem 'fog-aws'
 gem 'mini_magick'
 gem 'jquery-fileupload-rails'
 gem 'ckeditor'
+gem 'mercury-rails', git: 'https://github.com/jejacks0n/mercury.git'
 
 # Localization
 gem 'russian'

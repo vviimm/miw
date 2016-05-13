@@ -1,0 +1,20 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+      <h4 class="modal-title">Фон оглавления</h4>
+    </div>
+
+    <%= form_tag cezar_settings_page_path(@page), method: :put, remote: :true do %>
+      <div class="modal-body">
+        <%= file_field_tag :banner %>
+      </div>
+
+      <div class="modal-footer">
+        <button data-dismiss="modal" class="btn btn-default" type="button">Закрыть</button>
+        <%= submit_tag "Сохранить изменения", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+
+  </div>
+</div>

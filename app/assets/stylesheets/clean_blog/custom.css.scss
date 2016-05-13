@@ -1,0 +1,23 @@
+#settings {
+
+  a:focus, ul.dropdown-menu, a:hover {
+    background-color: transparent;
+    color: rgba(255,255,255,0.8);
+  }
+
+}
+
+.navbar-custom.is-fixed #settings {
+  a:focus, a:hover {
+    color: #0085a1;
+  }
+
+  ul.dropdown-menu a {
+    color: white;
+
+  }
+
+  ul.dropdown-menu a:hover {
+    color: rgba(255,255,255,0.8);
+  }
+}

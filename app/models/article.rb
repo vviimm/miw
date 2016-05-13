@@ -1,6 +1,6 @@
 class Article < ApplicationRecord
 
-  validates :title, presence: true
-  validates :body, presence: true
+  validates :title, :theme, :image, :body, presence: true
 
+  mount_uploader :image, ArticleImageUploader
 end

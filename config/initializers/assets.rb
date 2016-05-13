@@ -14,3 +14,5 @@ Rails.application.config.assets.precompile += %w( clean-blog.js clean-blog.css )
 Rails.application.config.assets.precompile += %w( cezar.js cezar.css )
 Rails.application.config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
 Rails.application.config.assets.precompile += %w( .svg .eot .woff .woff2 .ttf)
+
+Rails.application.config.assets.precompile += %w( mercury_layout.js )

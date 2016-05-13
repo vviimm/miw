@@ -12,7 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.remotipart
 //= require ckeditor/init
 //= require clean_blog/bootstrap.js
 //= require clean_blog/clean-blog.js
 //= require_tree ./cezar
+

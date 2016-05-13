@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160428155551) do
+ActiveRecord::Schema.define(version: 20160512105918) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 20160428155551) do
     t.text     "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "theme"
+    t.string   "image"
   end
 
   create_table "cezars", force: :cascade do |t|
@@ -53,5 +55,33 @@ ActiveRecord::Schema.define(version: 20160428155551) do
 
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable", using: :btree
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
+
+  create_table "mercury_images", force: :cascade do |t|
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  create_table "pages", force: :cascade do |t|
+    t.string   "name"
+    t.text     "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "settings_pages", force: :cascade do |t|
+    t.string   "name"
+    t.string   "title"
+    t.string   "subtitle"
+    t.string   "banner"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "page_id"
+  end
+
+  add_index "settings_pages", ["page_id"], name: "index_settings_pages_on_page_id", using: :btree
 
 end
