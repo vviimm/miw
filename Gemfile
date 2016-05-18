@@ -14,6 +14,7 @@ gem 'jquery-rails'
 gem "font-awesome-rails"
 gem 'font-awesome-sass'
 gem 'frontend-generators'
+gem 'maskedinput-rails'
 
 gem 'devise', github: 'plataformatec/devise', branch: 'master'
 
@@ -31,6 +32,9 @@ gem 'mini_magick'
 gem 'jquery-fileupload-rails'
 gem 'ckeditor'
 gem 'mercury-rails', git: 'https://github.com/jejacks0n/mercury.git'
+
+# Plugins
+gem "recaptcha", require: "recaptcha/rails"
 
 # Localization
 gem 'russian'

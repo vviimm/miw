@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160512105918) do
+ActiveRecord::Schema.define(version: 20160517094722) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,10 +51,9 @@ ActiveRecord::Schema.define(version: 20160512105918) do
     t.integer  "height"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable", using: :btree
+    t.index ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
   end
-
-  add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable", using: :btree
-  add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
 
   create_table "mercury_images", force: :cascade do |t|
     t.string   "image_file_name"
@@ -63,6 +62,15 @@ ActiveRecord::Schema.define(version: 20160512105918) do
     t.datetime "image_updated_at"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "phone"
+    t.text     "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "pages", force: :cascade do |t|
@@ -80,8 +88,7 @@ ActiveRecord::Schema.define(version: 20160512105918) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "page_id"
+    t.index ["page_id"], name: "index_settings_pages_on_page_id", using: :btree
   end
-
-  add_index "settings_pages", ["page_id"], name: "index_settings_pages_on_page_id", using: :btree
 
 end

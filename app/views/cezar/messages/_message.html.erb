@@ -1,0 +1,22 @@
+<div id="<%= dom_id(message) %>">
+  <div id="css-header-content" class="content-box-header panel-heading">
+    <div class="panel-title ">Сообщения для MIW</div>
+
+    <div class="panel-options">
+
+      <%= link_to cezar_message_path(message), id: "spinner", method: :delete, remote: true do %>
+        <i class="glyphicon glyphicon-remove"></i><% end %>
+    </div>
+  </div>
+
+  <div class="content-box-large box-with-header">
+    <address>
+      <p><%= message.name %></p>
+      <p><%= message.phone %></p>
+      <%= message.email %>
+    </address>
+
+    <blockquote><%= message.content %></blockquote>
+    <div style='clear: both'></div>
+  </div>
+</div>

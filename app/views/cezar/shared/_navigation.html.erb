@@ -11,6 +11,10 @@
       </li>
 
       <li>
+        <%= link_to " Сообщения", cezar_messages_path, id: "spinner", class: "glyphicon glyphicon-envelope", remote: true %>
+      </li>
+
+      <li>
         <%= link_to ' Выйти', destroy_cezar_session_path, class: "glyphicon glyphicon-off", method: :delete %>
       </li>
 

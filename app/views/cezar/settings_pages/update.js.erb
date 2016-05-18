@@ -1,2 +1,3 @@
 $(".modal").modal("hide");
-$("#description_<%= dom_id(@flat_image) %>").replaceWith("<%=j render('furrer/flat_images/description_flat_image', flat_image: @flat_image) %>");
+$("#js-header").replaceWith("<%=j render('clean_blogs/header').gsub('&quot;', "'") %>");
+

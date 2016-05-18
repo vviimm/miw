@@ -1,5 +1,6 @@
 //= require jquery
 //= require jquery_ujs
-//= require clean_blog/bootstrap.js
-//= require clean_blog/clean-blog.js
+//= require jquery.remotipart
+//= require maskedinput
+//= require_tree ./clean_blog
 //= require_self

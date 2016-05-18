@@ -1,0 +1,7 @@
+<% if @message.new_record? %>
+  $('#js-errors').remove();
+  $('#js-field-errors').append("<%=j render('messages/errors', message: @message) %>");
+<% else %>
+  $('#js-errors').remove();
+  $('#js-form-message').replaceWith("<%=j render('messages/message_sent') %>");
+<% end %>

@@ -1,6 +1,7 @@
 <% provide(:title, @page.name) %>
 
 <div id="page_content" class="mercury-region" data-type="editable">
+</div>
   <% if @page.name == "home" %>
 
     <% @articles.each do |article| %>
@@ -17,5 +18,12 @@
       </div>
       <hr>
     <% end %>
+
+  <% elsif @page.name == "about" %>
+    <%= render 'clean_blogs/about' %>
+
+  <% elsif @page.name == "contact" %>
+    <%= render 'messages/form' %>
+
   <% end %>
-</div>
+

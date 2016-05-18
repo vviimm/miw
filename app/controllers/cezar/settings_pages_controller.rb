@@ -1,12 +1,17 @@
-class Cezar::SettingsPagesController < Cezar::BaseController
+class Cezar::SettingsPagesController < ApplicationController
 
-  before_action :get_page, only: [:edit, :update]
+  before_action :authenticate_cezar!
+
+  layout "clean_blog"
+
+  before_action :get_page
 
   def edit
   end
 
   def update
-    @settings_page.update_column(:banner, params[:banner])
+    @page.settings_page.banner = params[:banner]
+    @page.settings_page.save!
   end
 
   private

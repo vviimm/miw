@@ -21,3 +21,15 @@
     color: rgba(255,255,255,0.8);
   }
 }
+
+#change-banner {
+  .modal-body input {
+    font-size: 14px;
+  }
+
+  .modal-footer .btn {
+    border-radius: 4px;
+    font-weight: normal;
+    padding: 6px 12px;
+  }
+}

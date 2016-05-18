@@ -7,14 +7,16 @@ Rails.application.routes.draw do
 
   namespace :cezar do
 
-    resources :dashboard, only: [:index]
+    resources :dashboard,      only: [:index]
     resources :articles
     resources :settings_pages, only: [:edit, :update]
+    resources :messages,     except: [:edit, :create, :update]
 
     get '/', to: 'dashboard#index'
   end
 
-  resources :pages, only: [:show, :update]
+  resources :pages,    only: [:show, :update]
+  resources :messages, only: [:create]
 
   resources :articles, only: [:show]
 
