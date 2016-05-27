@@ -1,6 +1,6 @@
 class Cezar::ArticlesController < Cezar::BaseController
 
-  before_action :set_article, only: [:show, :edit, :update, :destroy]
+  before_action :get_article, only: [:show, :edit, :update, :destroy]
 
   def index
     @articles = Article.order("updated_at DESC")
@@ -31,7 +31,7 @@ class Cezar::ArticlesController < Cezar::BaseController
 
 private
 
-  def set_article
+  def get_article
     @article = Article.find(params[:id])
   end
 

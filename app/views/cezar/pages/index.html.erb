@@ -1,0 +1,25 @@
+<%= render 'cezar/shared/header' %>
+
+<div id="sort">
+  <section>
+
+    <%= render 'cezar/pages/pages' %>
+
+    <div id="js-form" class="fade"></div>
+
+  </section>
+</div>
+
+<div class="loader" style="display:none;"></div>
+
+<script type="text/javascript">
+  $(function() {
+    Sort.init();
+  });
+</script>
+
+<script type="text/javascript">
+  $(function() {
+    Spinner.init();
+  });
+</script>

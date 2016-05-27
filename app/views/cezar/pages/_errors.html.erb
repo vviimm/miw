@@ -1,0 +1,5 @@
+<ul id="js-errors">
+  <% @page.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+</ul>

@@ -1,0 +1,46 @@
+<div class="panel-heading">
+  <div id="js-field-errors" class="panel-name">
+    Базовые настройки cтраницы
+  </div>
+
+  <% if @settings_page.errors.any? %>
+    <%= render 'cezar/pages/errors' %>
+  <% end %>
+</div>
+
+<div class="panel-content">
+  <%= form_for [:cezar, @settings_page], html: { class: "form-horizontal" }, remote: true do |f| %>
+
+    <div class="form-group">
+      <%= f.label :title, "Заголовок страницы", class: "col-sm-2 control-label" %>
+
+      <div class="col-sm-10">
+        <%= f.text_field :title %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :subtitle, "Подзаголовок", class: "col-sm-2 control-label" %>
+
+      <div class="col-sm-10">
+        <%= f.text_field :subtitle %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :banner, "Главная картинка", class: "col-sm-2 control-label" %>
+
+      <div class="col-sm-10">
+        <%= f.file_field :banner %>
+        <%= f.hidden_field :page_id, value: @page.id %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <%= f.submit "Сохранить", class: "btn btn-primary" %>
+      </div>
+    </div>
+
+  <% end %>
+</div>

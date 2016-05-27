@@ -1,0 +1,7 @@
+<% if @page.new_record? %>
+  $('#js-errors').remove();
+  $('#js-field-errors').append("<%=j render('cezar/pages/errors', page: @page) %>");
+  $('#js-errors').css("color", "red");
+<% else %>
+  $('.content-box-large').html("<%=j render('cezar/settings_pages/form', page: @page, settings_page: @settings_page = SettingsPage.new) %>");
+<% end %>

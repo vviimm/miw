@@ -11,6 +11,7 @@ gem 'uglifier'
 gem 'coffee-rails'
 gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem "font-awesome-rails"
 gem 'font-awesome-sass'
 gem 'frontend-generators'
@@ -35,6 +36,7 @@ gem 'mercury-rails', git: 'https://github.com/jejacks0n/mercury.git'
 
 # Plugins
 gem "recaptcha", require: "recaptcha/rails"
+gem 'jquery-mjs-nestedSortable-rails', '~> 2.0.0.pre.alpha.pre.1'
 
 # Localization
 gem 'russian'

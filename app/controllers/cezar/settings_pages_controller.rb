@@ -4,14 +4,19 @@ class Cezar::SettingsPagesController < ApplicationController
 
   layout "clean_blog"
 
-  before_action :get_page
+  before_action :get_page, except: [:create]
 
   def edit
   end
 
+  def create
+    @settings_page = SettingsPage.new(settings_page_params)
+    @settings_page.save
+  end
+
   def update
     @page.settings_page.banner = params[:banner]
-    @page.settings_page.save!
+    @page.settings_page.save
   end
 
   private
@@ -21,7 +26,7 @@ class Cezar::SettingsPagesController < ApplicationController
     end
 
     def settings_page_params
-      params.require(:settings_page).permit(:banner)
+      params.require(:settings_page).permit(:page_id, :title, :subtitle, :banner)
     end
 
 end

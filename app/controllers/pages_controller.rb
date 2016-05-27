@@ -3,7 +3,7 @@ class PagesController < ApplicationController
   layout 'clean_blog'
 
   def show
-    @pages = Page.order("id ASC")
+    @pages = Page.order("position ASC")
 
     @page = Page.find(params[:id])
     if @page.name == "home"

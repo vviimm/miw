@@ -1,0 +1,18 @@
+<li id="menuItem_<%= page.id %>">
+  <div class="menuDiv">
+
+    <span class="ui-icon ui-icon-document">
+      <span></span>
+    </span>
+
+    <span>
+      <span class="itemTitle" data-id="<%= page.id %>">
+        <%= page.name %>
+      </span>
+
+      <%= link_to page, cezar_page_path(page), method: :delete, class: "deleteMenu ui-icon ui-icon-closethick", remote: true %>
+
+      <%= link_to page, edit_cezar_page_path(page), class: "expandEditor ui-icon ui-icon-pencil", remote: true %>
+    </span>
+  </div>
+</li>

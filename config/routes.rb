@@ -9,8 +9,12 @@ Rails.application.routes.draw do
 
     resources :dashboard,      only: [:index]
     resources :articles
-    resources :settings_pages, only: [:edit, :update]
+    resources :settings_pages, only: [:create, :edit, :update]
     resources :messages,     except: [:edit, :create, :update]
+    resources :pages,        except: [:show, :update]
+
+    put '/update_position', to: 'pages#update_position'
+    get '/refresh_part', to: 'pages#refresh_part'
 
     get '/', to: 'dashboard#index'
   end

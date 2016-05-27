@@ -2,21 +2,32 @@
   <nav class="collapse navbar-collapse bs-navbar-collapse in navbar-right" role="navigation">
     <ul class="nav navbar-nav">
 
-      <li>
-        <%= link_to " Создать", new_cezar_article_path, id: "spinner", class: "glyphicon glyphicon-pencil", remote: true %>
-      </li>
+      <% if current_page?(cezar_path) %>
+        <li>
+          <%= link_to " Создать", new_cezar_article_path, id: "spinner", class: "glyphicon glyphicon-pencil", remote: true %>
+        </li>
+        <li>
+          <%= link_to ' Настройки', page_path(id="1"), class: "glyphicon glyphicon-cog" %>
+        </li>
+        <li>
+          <%= link_to ' Страницы', cezar_pages_path, class: "glyphicon glyphicon-list" %>
+        </li>
+        <li>
+          <%= link_to " Сообщения", cezar_messages_path, id: "spinner", class: "glyphicon glyphicon-envelope", remote: true %>
+        </li>
+        <li>
+          <%= link_to ' Выйти', destroy_cezar_session_path, class: "glyphicon glyphicon-off", method: :delete %>
+        </li>
 
-      <li>
-        <%= link_to ' Настройки', page_path(id="1"), class: "glyphicon glyphicon-cog" %>
-      </li>
+      <% elsif current_page?(cezar_pages_path) %>
+        <li>
+          <%= link_to " Назад", cezar_path, class: "glyphicon glyphicon-arrow-left" %>
+        </li>
+        <li>
+          <%= link_to " Добавить страницу", new_cezar_page_path, class: "glyphicon glyphicon-plus", remote: true %>
+        </li>
+      <% end %>
 
-      <li>
-        <%= link_to " Сообщения", cezar_messages_path, id: "spinner", class: "glyphicon glyphicon-envelope", remote: true %>
-      </li>
-
-      <li>
-        <%= link_to ' Выйти', destroy_cezar_session_path, class: "glyphicon glyphicon-off", method: :delete %>
-      </li>
 
     </ul>
   </nav>

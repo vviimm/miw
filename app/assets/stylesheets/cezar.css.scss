@@ -10,6 +10,8 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require jquery-ui/sortable
+ *= require jquery-ui/button
  *= require clean_blog/bootstrap.css
  *= require clean_blog/clean-blog.css
  *= require_tree ./cezar

@@ -1,0 +1,36 @@
+<ol id="js-sort" class="sortable">
+  <% @pages.each do |page| %>
+    <% if page.parent_id.nil? && page.children.blank? %>
+
+      <%= render 'cezar/pages/page', page: page %>
+
+    <% elsif page.parent_id.nil? && page.children.present? %>
+
+      <li id="menuItem_<%= page.id %>">
+        <div class="menuDiv">
+
+          <span class="disclose ui-icon ui-icon-minusthick">
+            <span></span>
+          </span>
+
+          <span>
+            <span class="itemTitle" data-id="<%= page.id %>">
+              <%= page.name %>
+            </span>
+
+            <%= link_to page, cezar_page_path(page), method: :delete, class: "deleteMenu ui-icon ui-icon-closethick", remote: true %>
+
+            <%= link_to page, edit_cezar_page_path(page), class: "expandEditor ui-icon ui-icon-pencil", remote: true %>
+          </span>
+        </div>
+
+        <ol>
+
+          <%= render 'cezar/pages/page_children', page: page %>
+
+        </ol>
+      </li>
+
+    <% end %>
+  <% end %>
+</ol>

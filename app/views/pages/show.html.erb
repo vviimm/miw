@@ -19,11 +19,10 @@
       <hr>
     <% end %>
 
-  <% elsif @page.name == "about" %>
-    <%= render 'clean_blogs/about' %>
-
   <% elsif @page.name == "contact" %>
     <%= render 'messages/form' %>
 
+  <% else %>
+    <%= render 'clean_blogs/content' %>
   <% end %>
 

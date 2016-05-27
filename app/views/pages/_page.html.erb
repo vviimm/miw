@@ -1,0 +1,16 @@
+<div id="children">
+  <% page.children.each do |child| %>
+    <% if child.children.present? %>
+      <li class="menu-item dropdown dropdown-submenu">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= child.name %></a>
+        <ul class="dropdown-menu">
+          <%= render 'pages/page', page: child %>
+        </ul>
+      </li>
+    <% else %>
+      <li>
+        <%= link_to child.name, child %>
+      </li>
+    <% end %>
+  <% end %>
+</div>

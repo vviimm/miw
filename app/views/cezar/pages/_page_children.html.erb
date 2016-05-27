@@ -1,0 +1,47 @@
+<% page.children.each do |child| %>
+  <% if child.children.present? %>
+    <li id="menuItem_<%= child.id %>">
+      <div class="menuDiv">
+
+        <span class="disclose ui-icon ui-icon-minusthick">
+          <span></span>
+        </span>
+
+        <span>
+          <span class="itemTitle" data-id="<%= child.id %>">
+            <%= child.name %>
+          </span>
+
+          <%= link_to child, cezar_page_path(child), method: :delete, class: "deleteMenu ui-icon ui-icon-closethick", remote: true %>
+
+          <%= link_to child, edit_cezar_page_path(child), class: "expandEditor ui-icon ui-icon-pencil", remote: true %>
+        </span>
+      </div>
+
+      <ol>
+
+        <%= render 'cezar/pages/page_children', page: child %>
+
+      </ol>
+    </li>
+  <% else %>
+    <li id="menuItem_<%= child.id %>">
+      <div class="menuDiv">
+
+        <span class="ui-icon ui-icon-document">
+          <span></span>
+        </span>
+
+        <span>
+          <span class="itemTitle" data-id="<%= child.id %>">
+            <%= child.name %>
+          </span>
+
+          <%= link_to child, cezar_page_path(child), method: :delete, class: "deleteMenu ui-icon ui-icon-closethick", remote: true %>
+
+          <%= link_to child, edit_cezar_page_path(child), class: "expandEditor ui-icon ui-icon-pencil", remote: true %>
+        </span>
+      </div>
+    </li>
+  <% end %>
+<% end %>

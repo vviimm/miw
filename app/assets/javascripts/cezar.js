@@ -12,6 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui/sortable
+//= require jquery-ui/button
+//= require jquery.mjs.nestedSortable
 //= require jquery.remotipart
 //= require ckeditor/init
 //= require clean_blog/bootstrap.js

@@ -1,0 +1,8 @@
+<% if @settings_page.new_record? %>
+  $('#js-errors').remove();
+  $('#js-field-errors').append("<%=j render('cezar/settings_pages/errors', settings_page: @settings_page) %>");
+  $('#js-errors').css("color", "red");
+<% else %>
+  $('#js-form').removeClass('in').empty();
+  $('#js-sort').append("<%=j render('cezar/pages/page', page: @settings_page.page).gsub('&quot;', "'") %>");
+<% end %>

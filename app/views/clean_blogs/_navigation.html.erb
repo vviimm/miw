@@ -10,10 +10,22 @@
       <a class="navbar-brand">MIW</a>
     </div>
 
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
+    <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
         <% @pages.each do |page| %>
-          <li><%= link_to page.name, page %></li>
+          <% if page.parent_id.nil? && page.children.blank? %>
+            <li><%= link_to page.name, page %></li>
+
+          <% elsif page.parent_id.nil? && page.children.present? %>
+            <li id="settings" class="menu-item dropdown">
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle"><%= page.name %> <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <%= render 'pages/page', page: page %>
+              </ul>
+            </li>
+          <% end %>
         <% end %>
 
         <% if cezar_signed_in? %>
