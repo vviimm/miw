@@ -1,5 +1,5 @@
 <% if current_page?(article_path) %>
-  <header class="intro-header" style="background-image: url('<%= @article.image.url %>')">
+  <header class="intro-header" style="background-image: url('<%= asset_path(@article.image) %>')">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -13,7 +13,7 @@
     </div>
   </header>
 <% else %>
-  <header class="intro-header" style="background-image: url('<%= @page.settings_page.banner.url %>')">
+  <header class="intro-header" style="background-image: url('<%= asset_path(@page.settings_page.banner) %>')">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
