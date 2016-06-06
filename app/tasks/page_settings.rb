@@ -12,7 +12,7 @@ class PageSettings
       page_id = 1
       title = "Мой кабинет"
       subtitle = "любимые страницы"
-      banner = File.open("#{Rails.root}/db/images/home.jpg")
+      banner = File.open("#{Rails.root}/app/assets/images/clean_blog/home-bg.jpg")
 
       existing_page_settings = SettingsPage.find_by(page_id: page_id)
 
@@ -31,9 +31,9 @@ class PageSettings
       page_id = 2
       title = "Немного обо мне"
       subtitle = "молодость, юность, отрочество"
-      banner = File.open("#{Rails.root}/db/images/about.jpg")
+      banner = File.open("#{Rails.root}/app/assets/images/clean_blog/about-bg.jpg")
 
-      existing_page_settings = SettingsPage.find_by(name: name)
+      existing_page_settings = SettingsPage.find_by(page_id: page_id)
 
       if existing_page_settings.blank?
         SettingsPage.create!(
@@ -50,9 +50,9 @@ class PageSettings
       page_id = 3
       title = "Контакты"
       subtitle = "что, где, когда"
-      banner = File.open("#{Rails.root}/db/images/contact.jpg")
+      banner = File.open("#{Rails.root}/app/assets/images/clean_blog/contact-bg.jpg")
 
-      existing_page_settings = SettingsPage.find_by(name: name)
+      existing_page_settings = SettingsPage.find_by(page_id: page_id)
 
       if existing_page_settings.blank?
         SettingsPage.create!(
