@@ -1,30 +1,25 @@
 #settings {
-
   a:focus, ul.dropdown-menu, a:hover {
     background-color: transparent;
     color: rgba(255,255,255,0.8);
     text-decoration: none;
   }
-
 }
 
 .navbar-custom.is-fixed #settings {
   a:focus, a:hover {
     color: #0085a1;
   }
-
   ul.dropdown-menu a {
     color: white;
 
   }
-
   ul.dropdown-menu a:hover {
     color: rgba(255,255,255,0.8);
   }
 }
 
 #children {
-
   .dropdown-submenu {
       position:relative;
   }
@@ -72,7 +67,6 @@
   .modal-body input {
     font-size: 14px;
   }
-
   .modal-footer .btn {
     border-radius: 4px;
     font-weight: normal;
@@ -81,14 +75,10 @@
 }
 
 #font_style {
-
-  .site-heading {
-    text-shadow: -1px 0 black, 0 0.5px black, 0.5px 0 black, 0 -1px black;
-  }
-
-  .navbar {
-    .navbar-brand, ul {
-      text-shadow: -1px 0 black, 0 0.5px black, 0.5px 0 black, 0 -1px black;
+  text-shadow: -1px 0 black, 0 0.5px black, 0.5px 0 black, 0 -1px black;
+  .is-visible {
+    a, ul {
+      text-shadow: none;
     }
   }
 }
