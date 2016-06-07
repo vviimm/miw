@@ -12,10 +12,18 @@
   }
   ul.dropdown-menu a {
     color: white;
-
   }
   ul.dropdown-menu a:hover {
     color: rgba(255,255,255,0.8);
+  }
+}
+
+.navbar-custom.is-fixed.is-visible #settings {
+  ul.dropdown-menu a {
+    color: #404040;
+  }
+  ul.dropdown-menu a:hover {
+    color: #337ab7;
   }
 }
 
